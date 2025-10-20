@@ -29,6 +29,19 @@ class NaveDeCarga inherits Nave {
 
 }
 
+class NaveDeCargaResiduosRadioactivos inherits NaveDeCarga {
+
+	override method recibirAmenaza() {
+		velocidad = 0
+	}
+
+}
+
+
+
+
+
+
 class NaveDePasajeros inherits Nave {
 
 	var property alarma = false
@@ -37,7 +50,7 @@ class NaveDePasajeros inherits Nave {
 	method velocidad() {
 		return velocidad
 	}
-	
+
 	method tripulacion() = cantidadDePasajeros + 4
 
 	method velocidadMaximaLegal() = 300000 / self.tripulacion() - if (cantidadDePasajeros > 100) 200 else 0
