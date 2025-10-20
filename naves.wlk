@@ -15,6 +15,11 @@ class Nave {
 	method prepararseParaViajar() {
 		self.aumentarVelocidad(15000)
 	}
+
+	method encuentroConEnemigo() {
+		self.recibirAmenaza()
+		self.propulsar()
+	}
 }
 
 
@@ -91,7 +96,7 @@ class NaveDeCombate inherits Nave {
 	method velocidad() {
 		return velocidad
 	}
-	
+
 	method velocidad(_velocidad) {
 		velocidad = _velocidad
 	}

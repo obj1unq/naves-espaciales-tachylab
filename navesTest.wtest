@@ -140,3 +140,13 @@ describe "Prepararse para viajar" {
 		assert.equals(ataque, naveDeCombateReposo.modo())
 	}
 }
+
+describe "Encontrarse con un enemigo" {
+	const naveDePasajeros = new NaveDePasajeros(velocidad = 0, alarma = false)
+
+	test "Encontrarse con un enemigo - Testeo" {
+		naveDePasajeros.encuentroConEnemigo()
+		assert.equals(20000, naveDePasajeros.velocidad())
+		assert.that(naveDePasajeros.alarma())
+	}
+}
