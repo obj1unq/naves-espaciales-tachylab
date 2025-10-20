@@ -22,6 +22,7 @@ class Nave {
 	}
 }
 
+//Subclases de Nave ----------------------------------------------------------------------------------------------------------------
 
 class NaveDeCarga inherits Nave {
 
@@ -40,6 +41,7 @@ class NaveDeCarga inherits Nave {
 	}
 }
 
+//Subclases de Nave de Carga -------------------------------------------------------------------------------------------------------
 class NaveDeCargaResiduosRadioactivos inherits NaveDeCarga {
 
 	var sellado = false
@@ -62,9 +64,7 @@ class NaveDeCargaResiduosRadioactivos inherits NaveDeCarga {
 	}
 }
 
-
-
-
+//----------------------------------------------------------------------------------------------------------------------------------
 
 
 class NaveDePasajeros inherits Nave {
@@ -120,6 +120,7 @@ class NaveDeCombate inherits Nave {
 
 }
 
+// Modos de la nave de combate --------------------------------------------------------------------------------------------------
 object reposo {
 
 	method invisible() = false
