@@ -109,3 +109,34 @@ describe "Nave de carga de residuos radioactivos" {
 		assert.equals(0, naveDeResiduos.velocidad())
 	}
 }
+
+describe "Prepararse para viajar" {
+	const naveDePasajeros = new NaveDePasajeros(velocidad = 290000)
+	const naveDeResiduos = new NaveDeCargaResiduosRadioactivos(velocidad = 0, sellado = false)
+	const naveDeCombateAtaque = new NaveDeCombate(velocidad = 0, modo = ataque)
+	const naveDeCombateReposo = new NaveDeCombate(velocidad = 0, modo = reposo)
+
+	test "Prepararse para viajar - Nave de Pasajeros" {
+		naveDePasajeros.prepararseParaViajar()
+		assert.equals(300000, naveDePasajeros.velocidad())
+	}
+
+	test "Prepararse para viajar - Nave de Carga de Residuos" {
+		naveDeResiduos.prepararseParaViajar()
+		assert.equals(15000, naveDeResiduos.velocidad())
+		assert.equals(true, naveDeResiduos.sellado())
+	}
+
+	test "Prepararse para viajar - Nave de Combate en Ataque" {
+		naveDeCombateAtaque.prepararseParaViajar()
+		assert.equals(15000, naveDeCombateAtaque.velocidad())
+		assert.equals("Volviendo a la base", naveDeCombateAtaque.ultimoMensaje())
+	}
+
+	test "Prepararse para viajar - Nave de Combate en Reposo" {
+		naveDeCombateReposo.prepararseParaViajar()
+		assert.equals(15000, naveDeCombateReposo.velocidad())
+		assert.equals("Saliendo en misión", naveDeCombateReposo.ultimoMensaje())
+		assert.equals(ataque, naveDeCombateReposo.modo())
+	}
+}

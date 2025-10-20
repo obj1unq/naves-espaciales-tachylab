@@ -39,6 +39,10 @@ class NaveDeCargaResiduosRadioactivos inherits NaveDeCarga {
 
 	var sellado = false
 
+	method sellado() {
+		return sellado
+	}
+
 	override method recibirAmenaza() {
 		velocidad = 0
 	}
@@ -87,7 +91,7 @@ class NaveDeCombate inherits Nave {
 	method velocidad() {
 		return velocidad
 	}
-
+	
 	method velocidad(_velocidad) {
 		velocidad = _velocidad
 	}
@@ -122,7 +126,7 @@ object reposo {
 	method prepararseParaViajar(nave) {
 		nave.emitirMensaje("Saliendo en misión")
 		nave.modo(ataque)
-		
+
 	}
 }
 
