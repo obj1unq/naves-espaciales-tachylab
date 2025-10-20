@@ -99,3 +99,13 @@ describe "Naves propulsadas" {
 		assert.equals(300000, naveDePasajeros.velocidad())
 	}
 }
+
+describe "Nave de carga de residuos radioactivos" {
+	const naveDeResiduos = new NaveDeCargaResiduosRadioactivos(velocidad = 10000, carga = 5000)
+
+	test "Test de Nave de carga de residuos radioactivos - Recibir amenaza" {
+		naveDeResiduos.recibirAmenaza()
+		assert.equals(5000, naveDeResiduos.carga())
+		assert.equals(0, naveDeResiduos.velocidad())
+	}
+}
