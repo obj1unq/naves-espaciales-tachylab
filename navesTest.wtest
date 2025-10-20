@@ -84,3 +84,18 @@ describe "Nave de combate" {
 		assert.equals("Enemigo encontrado", naveEnAtaque.ultimoMensaje())
 	}
 }
+
+describe "Naves propulsadas" {
+	const naveDeCarga = new NaveDeCarga(velocidad = 0)
+	const naveDePasajeros = new NaveDePasajeros(velocidad = 290000)
+
+	test "Testeo de la Propulsion - Nave de Carga con velocidad 0" {
+		naveDeCarga.propulsar()
+		assert.equals(20000, naveDeCarga.velocidad())
+	}
+
+	test "Testeo de la Propulsion - Nave de Pasajeros con velocidad 290.000" {
+		naveDePasajeros.propulsar()
+		assert.equals(300000, naveDePasajeros.velocidad())
+	}
+}
